@@ -1,57 +1,51 @@
 import React from 'react'
-import Button from './components/Button'
-
 
 class Counter extends React.Component {
-    state = {
-    }
+  state = {
+    number: this.props.startValue
+  }
 
-    addButton = () => {
-        if (this.state.value >= this.props.max) return
+  incHandler = () => {
+    if (this.state.number >= this.props.max) return
 
-        this.setState({ value: this.state.value + 1 })
-    }
+    this.setState({ number: this.state.number + 1 })
+  }
 
-    reduceButton = () => {
-        if (this.state.value <= this.props.min) return
+  decHandler = () => {
+    if (this.state.number <= this.props.min) return
 
-        this.setState({ value: this.state.value - 1 })
-    }
+    this.setState({ number: this.state.number - 1 })
+  }
 
-    render() {
-        return (
-            <div>
-                <div>
-                    <h1>
-                        {this.state.value}
-                    </h1>
-                    <h1>
-                        {this.props.min}
-                    </h1>
-                    <h1>
-                        {this.props.max}
-                    </h1>
-                    <Button
-                        label={'+'}
-                        onClick={this.addButton}
-                    />
-                    <Button
-                        label={'-'}
-                        onClick={this.reduceButton}
-                    />
-                </div>
-                <div>
-                    Przekorczyles zakres
-                </div>
-            </div>
-        )
-    }
-
+  render() {
+    return (
+      <div>
+        <h1>{this.state.number}</h1>
+        <button
+          onClick={this.incHandler}
+        >
+          +
+        </button>
+        <button
+          onClick={this.decHandler}
+        >
+          -
+        </button>
+        <div>
+          {
+            this.state.number === this.props.min ?
+              'Lower range exceeded!'
+              :
+              this.state.number === this.props.max ?
+                'Upper range exceeded!'
+                :
+                null
+          }
+        </div>
+      </div>
+    )
+  }
 }
-
-
-
-
 
 
 export default Counter
