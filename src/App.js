@@ -1,10 +1,10 @@
 import React from 'react'
 
-import Form from './Form'
+import Users from './Users'
 
 const App = (props) => (
   <div>
-    <Form />
+    <Users />
   </div>
 )
 
