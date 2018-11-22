@@ -12,7 +12,7 @@ class Users extends React.Component {
     componentDidMount() {
         this.setState({ isLoading: true })
 
-        fetch(`https://randomuser.me/api?results=${this.props.numberOfResults}`)
+        fetch(`https://randomuser.me/api?results=${(Math.round(Math.random() * 10 + 1))}`)
             .then(response => response.json())
             .then(data => this.setState({
                 users: data.results,
@@ -51,6 +51,6 @@ class Users extends React.Component {
 }
 
 Users.defaultProps = {
-    numberOfResults: (Math.round(Math.random()))
+    numberOfResults: 2
 }
 export default Users
