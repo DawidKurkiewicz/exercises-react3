@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react'
+import Counter from './Counter'
 
-class App extends Component {
-  render() {
-    return (
-      <div>
+const App = () => (
+  <div>
+    <Counter
+      startValue={5}
+      min={-10}
+      max={10}
+    />
+  </div>
+)
 
-
-
-        
-      </div>
-    );
-  }
-}
-
-export default App;
+export default App
