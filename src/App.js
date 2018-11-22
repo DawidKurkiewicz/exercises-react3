@@ -1,10 +1,11 @@
 import React from 'react'
 
-import Users from './Users'
+import Users2 from './Users2'
 
 const App = (props) => (
   <div>
-    <Users />
+    <Users2 />
+    
   </div>
 )
 
