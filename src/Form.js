@@ -1,4 +1,6 @@
 import React from 'react'
+import TextField from 'material-ui/TextField';
+
 
 class Form extends React.Component {
     state = {
@@ -8,10 +10,13 @@ class Form extends React.Component {
         return (
             <div>
                 <h1>{this.state.text}</h1>
-                <input
+                <TextField
                     type="text"
                     value={this.state.text}
-                    onChange={(event) => this.setState({text : event.target.value})}
+                    onChange={(event) => this.setState({ text: event.target.value })}
+                />
+                <TextField
+                    value={this.state.text}
                 />
             </div>
         )
